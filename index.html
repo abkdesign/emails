@@ -1,33 +1,346 @@
-<?php
-/**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package react
- */
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        /* FONTS */
+        @media screen {
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+            }
 
-get_header(); ?>
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 700;
+                src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+            }
 
-    <div id="primary" class="outer-container">
-        <div id="main" class="main-content" role="main">
-            <section id="banner" class="box box1"><div class="inner-container">banner</div></section>
-            <section id="message" class="box box1"><div class="inner-container">message</div></section>
-            <section id="suggestions" class="box box2"><div class="inner-container">suggestions</div></section>
-            <section id="reservation-detail" class="box box3"><div class="inner-container">reservation details</div></section>
-            <section id="costumer-info" class="box box4"><div class="inner-container">customer info</div></section>
-            <section id="payment-info" class="box box5"><div class="inner-container">payment-info</div></section>
-            <section id="important" class="box box5"><div class="inner-container">important</div></section>
-            <section id="organisation-info" class="box box5"><div class="inner-container">organisation info</div></section>
+            @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 400;
+                src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+            }
 
-        </div><!-- #main -->
-    </div><!-- #primary -->
+            @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 700;
+                src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+            }
+        }
 
-<?php
+        /* CLIENT-SPECIFIC STYLES */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; }
 
-get_footer();
+        /* RESET STYLES */
+        img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+        table { border-collapse: collapse !important; }
+        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+
+        /* iOS BLUE LINKS */
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* MOBILE STYLES */
+        @media screen and (max-width:600px){
+            h1 {
+                font-size: 32px !important;
+                line-height: 32px !important;
+            }
+
+            .wrapper {
+                width: 100% !important;
+            }
+        }
+
+        /* ANDROID CENTER FIX */
+        div[style*="margin: 16px 0;"] { margin: 0 !important; }
+    </style>
+</head>
+<body style="background-color: #f4f4f4; margin: 0 !important; padding: 0 !important;">
+
+<!-- HIDDEN PREHEADER TEXT -->
+<div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Lato', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+    We've added a ton of features to your account. Check out the biggest changes below or log in to view them all.
+</div>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <!-- LOGO -->
+    <tr>
+        <td bgcolor="#539be2" align="center">
+            <table border="0" cellpadding="0" cellspacing="0" width="600" class="wrapper" >
+                <tr>
+                    <td align="center" valign="top" style="padding: 40px 10px 40px 10px;">
+                        <a href="#" target="_blank">
+                            <img editable label="logo" alt="Logo" src="" width="40" height="40" style="display: block; width: 40px; max-width: 40px; min-width: 40px; font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;" border="0">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- HERO -->
+    <tr>
+        <td bgcolor="#539be2" align="center" style="padding: 0px 10px 0px 10px;">
+            <table border="0" cellpadding="0" cellspacing="0"  width="600" class="wrapper" >
+                <tr>
+                    <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
+                        <h1 style="font-size: 40px; font-weight: 400; margin: 0;"><singleline label="main heading">Afleveringsbeskræftelse</singleline></h1>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- COPY BLOCK -->
+    <tr>
+        <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
+            <table border="0" cellpadding="0" cellspacing="0"  width="600" class="wrapper" >
+                <!-- Banner -->
+                <tr>
+                    <td bgcolor="#ffffff" align="left" style="padding: 0px 0px 0px 0px;" >
+                        <a href="#" target="_blank">
+                            <img editable label="hero" alt="Product update video" src="http://www.ikea.com/ms/da_DK/media/campaigns/IKEASHOPPING/IKEAHOPPING-OKT-2016/seo_image/IKEA%20FINANSIERING__what-shopping-1060.png" width="600" style="display: block; width: 100%; max-width: 100%; min-width: 100px; font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;" border="0">
+                        </a>
+                    </td>
+                </tr>
+                <!-- COPY -->
+                <tr>
+                    <td bgcolor="#ffffff" align="left" style="padding: 40px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
+                        <multiline label="copy block 1">Kære Sami Mansour <br> Tak fordi du lånte en trailer </multiline>
+                    </td>
+                </tr>
+                <!-- COPY HEADING -->
+                <tr>
+                    <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 0px 30px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
+                        <h2 style="font-size: 24px; font-weight: 400; margin: 0;"><singleline label="subheading 2">Important</singleline></h2>
+                    </td>
+                </tr>
+                <!-- COPY -->
+                <tr>
+                    <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
+                        <multiline label="copy block 3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id nibh pretium, volutpat dolor et, rhoncus ante. Ut neque tellus, scelerisque in consequat ac, porta at justo. Quisque gravida justo congue diam semper, eu ullamcorper nisl rhoncus.</multiline>
+                    </td>
+                </tr>
+                <!-- COPY HEADING -->
+                <tr>
+                    <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 0px 30px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
+                        <h2 style="font-size: 24px; font-weight: 400; margin: 0;"><singleline label="subheading 2">Suggestions</singleline></h2>
+                    </td>
+                </tr>
+                <!-- COPY -->
+                <tr>
+                    <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
+                        <multiline label="copy block 3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id nibh pretium, volutpat dolor et, rhoncus ante. Ut neque tellus, scelerisque in consequat ac, porta at justo. Quisque gravida justo congue diam semper, eu ullamcorper nisl rhoncus.</multiline>
+                    </td>
+                </tr>
+                <!-- COPY HEADING -->
+                <tr>
+                    <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 0px 30px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
+                        <h2 style="font-size: 24px; font-weight: 400; margin: 0;"><singleline label="subheading 3">Costumer info</singleline></h2>
+                    </td>
+                </tr>
+                <!-- COPY -->
+                <tr>
+                    <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; border-radius: 0px 0px 4px 4px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
+                        <multiline label="copy block 4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id nibh pretium, volutpat dolor et, rhoncus ante. Ut neque tellus, scelerisque in consequat ac, porta at justo. Quisque gravida justo congue diam semper, eu ullamcorper nisl rhoncus.</multiline>
+                    </td>
+                </tr>
+                <!-- COPY HEADING -->
+                <tr>
+                    <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 0px 30px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
+                        <h2 style="font-size: 24px; font-weight: 400; margin: 0;"><singleline label="subheading 1">Reservation details</singleline></h2>
+                    </td>
+                </tr>
+                <!-- COPY -->
+                <tr>
+                    <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 0px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
+                        <multiline label="copy block 2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id nibh pretium, volutpat dolor et, rhoncus ante. Ut neque tellus, scelerisque in consequat ac, porta at justo. Quisque gravida justo congue diam semper, eu ullamcorper nisl rhoncus.</multiline>
+                    </td>
+                </tr>
+                <!-- COPY -->
+                <tr>
+                    <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
+                        <multiline label="cta link"><a href="#" target="_blank" style="color: #539be2;">reservation details</a></multiline>
+                    </td>
+                </tr>
+                <!-- PAYMENT -->
+                <tr>
+                    <td align="center" style="background-color: #eeeeee;" bgcolor="#eeeeee">
+                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" class="mobile-table">
+
+                            <tr>
+                                <td align="center" style="padding: 35px 35px 20px 35px; background-color: #ffffff;" bgcolor="#ffffff">
+                                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+
+                                        <tr>
+                                            <td align="left" style="padding-top: 20px;">
+                                                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                    <tr>
+                                                        <td width="75%" align="left" bgcolor="#eeeeee" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 800; line-height: 24px; padding: 10px;">
+                                                            Reservations nr #
+                                                        </td>
+                                                        <td width="25%" align="left" bgcolor="#eeeeee" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 800; line-height: 24px; padding: 10px;">
+                                                            2345678
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="75%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 15px 10px 5px 10px;">
+                                                            Gratis lån (20 mar kl. 13:00 til 20 mar kl. 20:00)
+                                                        </td>
+                                                        <td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 15px 10px 5px 10px;">
+                                                            0,00
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="75%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;">
+                                                            Depositum
+                                                        </td>
+                                                        <td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;">
+                                                            0,00
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="75%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;">
+                                                            moms
+                                                        </td>
+                                                        <td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;">
+                                                            0,00
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" style="padding-top: 20px;">
+                                                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                    <tr>
+                                                        <td width="75%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 800; line-height: 24px; padding: 10px; border-top: 3px solid #eeeeee; border-bottom: 3px solid #eeeeee;">
+                                                            TOTAL
+                                                        </td>
+                                                        <td width="25%" align="left" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 800; line-height: 24px; padding: 10px; border-top: 3px solid #eeeeee; border-bottom: 3px solid #eeeeee;">
+                                                            DKK 0,00
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" height="100%" valign="top" width="100%" style="padding: 0 35px 35px 35px; background-color: #ffffff;" bgcolor="#ffffff">
+                                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td align="center" valign="top">
+                                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="250" class="mobile-table">
+                                                    <tr>
+                                                        <td align="left" valign="top" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;" class="text-center">
+                                                            <p style="font-weight: 800;">Afhentning</p>
+                                                            <p>IKEA gentofte<br>Nybrovej 2 2800 Gentofte<br><b>20-03-2017 13:00</b></p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <table align="right" border="0" cellpadding="0" cellspacing="0" width="250" class="mobile-table">
+                                                    <tr>
+                                                        <td align="left" valign="top" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;" class="text-center">
+                                                            <p style="font-weight: 800;">Aflevering</p>
+                                                            <p>IKEA gentofte<br>Nybrovej 2 2800 Gentofte<br><b>20-03-2017 20:00</b></p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+            </table>
+        </td>
+    </tr>
+
+    <!-- SUPPORT CALLOUT -->
+    <tr>
+        <td bgcolor="#f4f4f4" align="center" style="padding: 30px 10px 0px 10px;">
+            <table border="0" cellpadding="0" cellspacing="0"  width="600" class="wrapper" >
+                <!-- HEADLINE -->
+                <tr>
+                    <td bgcolor="#B3E5FC" align="center" style="padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;" >
+                        <h2 style="font-size: 20px; font-weight: 400; color: #111111; margin: 0;"><singleline label="support heading">
+                            Har du brug for mere hjælp?</singleline></h2>
+                        <p style="margin: 0;"><singleline label="support cta link"><a href="#" target="_blank" style="color: #539be2;">
+                            Vi er her klar til at tale</a></singleline></p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <!-- FOOTER -->
+    <tr>
+        <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
+            <table border="0" cellpadding="0" cellspacing="0"  width="600" class="wrapper" >
+                <!-- NAVIGATION -->
+                <tr>
+                    <td bgcolor="#f4f4f4" align="left" style="padding: 30px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;" >
+                        <p style="margin: 0;"><singleline label="navigation">
+                            <a href="#" target="_blank" style="color: #111111; font-weight: 700;">Hjemmeside</a> -
+                            <a href="#" target="_blank" style="color: #111111; font-weight: 700;">Betingelser</a> -
+                            <a href="#" target="_blank" style="color: #111111; font-weight: 700;">Hjælp</a></singleline>
+                        </p>
+                    </td>
+                </tr>
+                <!-- PERMISSION REMINDER -->
+                <tr>
+                    <td bgcolor="#f4f4f4" align="left" style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;" >
+                        <p style="margin: 0;"><singleline label="permission reminder">
+                            Hvis emailen ser underlig ud, <webversion target="_blank" style="color: #111111; font-weight: 700;">Se det i din browser</webversion>.</singleline></p>
+                    </td>
+                </tr>
+                <!-- UNSUBSCRIBE -->
+                <tr>
+                    <!--<td bgcolor="#f4f4f4" align="left" style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;" >
+                        <p style="margin: 0;">If these emails get annoying, please feel free to <unsubscribe target="_blank" style="color: #111111; font-weight: 700;">unsubscribe</unsubscribe>.</p>
+                    </td>->
+                </tr>
+                <!-- ADDRESS -->
+                <tr>
+                    <td bgcolor="#f4f4f4" align="left" style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;" >
+                        <p style="margin: 0;"><singleline label="address">Freetrailer - Sydmarken 31 - Søborg, 2800 - CVR: 27626661</singleline></p>
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>
+<div id="primary" class="outer-container">
+    <div id="main" class="main-content" role="main">
+        <section id="banner" class="box box1"><div class="inner-container">banner</div></section>
+        <section id="message" class="box box1"><div class="inner-container">message</div></section>
+        <section id="suggestions" class="box box2"><div class="inner-container">suggestions</div></section>
+        <section id="reservation-detail" class="box box3"><div class="inner-container">reservation details</div></section>
+        <section id="costumer-info" class="box box4"><div class="inner-container">customer info</div></section>
+        <section id="payment-info" class="box box5"><div class="inner-container">payment-info</div></section>
+        <section id="important" class="box box5"><div class="inner-container">important</div></section>
+        <section id="organisation-info" class="box box5"><div class="inner-container">organisation info</div></section>
+
+    </div><!-- #main -->
+</div><!-- #primary -->
+
+</body>
+</html>
+
